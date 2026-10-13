@@ -13,19 +13,19 @@ class BattleApplicationTest {
     @Autowired MockMvc mvc;
     @Test void rendersGameAndGuide() throws Exception {
         mvc.perform(get("/")).andExpect(status().isOk()).andExpect(view().name("game"))
-            .andExpect(content().string(org.hamcrest.Matchers.containsString("S3スライム")))
+            .andExpect(content().string(org.hamcrest.Matchers.containsString("S3 スライム")))
             .andExpect(content().string(org.hamcrest.Matchers.containsString("冒険者の書")))
             .andExpect(content().string(org.hamcrest.Matchers.containsString("value=\"100\"")));
     }
     @Test void wrongThenCorrectAnswer() throws Exception {
         mvc.perform(post("/api/battle/answer").contentType(MediaType.APPLICATION_JSON)
-            .content("{\"questionId\":\"S3-001\",\"answer\":\"ブロックストレージです\"}"))
+            .content("{\"questionId\":\"AWS-001\",\"answer\":\"ブロックストレージです\"}"))
             .andExpect(status().isOk()).andExpect(jsonPath("$.result").value("WRONG"))
             .andExpect(jsonPath("$.damage").value(0)).andExpect(jsonPath("$.enemyHp").value(100))
             .andExpect(jsonPath("$.clear").value(false));
-        for (String answer : new String[]{"S3はオブジェクトストレージです", "オブジェクトを保存する"}) {
+        for (String answer : new String[]{"S3はオブジェクトストレージです", "Ｓ３はオブジェクトストレージだ！"}) {
             mvc.perform(post("/api/battle/answer").contentType(MediaType.APPLICATION_JSON)
-                .content("{\"questionId\":\"S3-001\",\"answer\":\"" + answer + "\"}"))
+                .content("{\"questionId\":\"AWS-001\",\"answer\":\"" + answer + "\"}"))
                 .andExpect(status().isOk()).andExpect(jsonPath("$.result").value("CORRECT"))
                 .andExpect(jsonPath("$.damage").value(100)).andExpect(jsonPath("$.enemyHp").value(0))
                 .andExpect(jsonPath("$.clear").value(true));
@@ -33,7 +33,7 @@ class BattleApplicationTest {
     }
     @Test void invalidRequestsAreRejected() throws Exception {
         for (String body : new String[]{"{\"questionId\":\"unknown\",\"answer\":\"オブジェクト\"}",
-            "{\"questionId\":\"S3-001\",\"answer\":\" \"}", "{}"}) {
+            "{\"questionId\":\"AWS-001\",\"answer\":\" \"}", "{}"}) {
             mvc.perform(post("/api/battle/answer").contentType(MediaType.APPLICATION_JSON).content(body))
                 .andExpect(status().isBadRequest());
         }

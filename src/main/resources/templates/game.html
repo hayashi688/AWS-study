@@ -2,17 +2,17 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>S3の湖 | AWS学習RPG</title><link rel="stylesheet" th:href="@{/css/game.css}"><script defer th:src="@{/js/game.js}"></script></head>
 <body><main>
-<header><p class="eyebrow">AWS QUEST · STAGE 01</p><h1>S3の湖</h1><p>冒険者の書を読み、敵の間違いを自分の言葉で正そう。</p></header>
+<header><p class="eyebrow">AWS QUEST · <span id="progress" th:text="${question.stage + ' / ' + total}"></span></p><h1 id="area" th:text="${question.area}"></h1><p>冒険者の書を読み、敵の間違いを自分の言葉で正そう。</p></header>
 <div class="columns">
-<section class="panel battle" aria-labelledby="battle-title"><h2 id="battle-title">⚔ BATTLE</h2><h3 th:text="${enemy.enemyName}">S3スライム</h3>
-<div class="lake"><div class="slime" aria-label="S3スライム">(・ω・)</div><div class="ripple"></div></div>
-<div class="hp-label">HP <span id="hp-number" th:text="${enemy.currentHp}">100</span> / <span th:text="${enemy.maxHp}">100</span></div>
-<progress id="hp-bar" th:max="${enemy.maxHp}" th:value="${enemy.currentHp}" aria-label="敵のHP"></progress>
-<blockquote id="enemy-statement" th:text="${enemy.statement}"></blockquote>
+<section class="panel battle" aria-labelledby="battle-title"><h2 id="battle-title">⚔ BATTLE</h2><h3 id="enemy-name" th:text="${question.enemy.name}">S3スライム</h3>
+<div class="lake"><div class="slime" th:attr="aria-label=${question.enemy.name}" th:text="${question.enemy.face}"></div><div class="ripple"></div></div>
+<div class="hp-label">HP <span id="hp-number" th:text="${question.enemy.maxHp}">100</span> / <span id="max-hp" th:text="${question.enemy.maxHp}">100</span></div>
+<progress id="hp-bar" th:max="${question.enemy.maxHp}" th:value="${question.enemy.maxHp}" aria-label="敵のHP"></progress>
+<blockquote id="enemy-statement" th:text="${question.enemy.statement}"></blockquote>
 <div id="battle-result" role="status" aria-live="polite"></div>
-<div id="clear" hidden><strong>✨ CLEAR! ✨</strong><p>S3スライムを倒した！</p></div>
+<div id="clear" hidden><strong>✨ CLEAR! ✨</strong><p id="clear-message"></p><button id="next-stage" type="button" disabled>次のステージへ</button></div>
 </section>
-<aside class="panel guide"><h2>📖 冒険者の書</h2><p class="eyebrow">AMAZON S3 · 基礎知識</p><h3 th:text="${question.guideTitle}"></h3><p th:text="${question.guideText}"></p><div class="storage-diagram" aria-hidden="true">🪣 バケット<br><span>📄 オブジェクト　📷 オブジェクト</span></div><p class="hint">敵はストレージの種類を取り違えているようだ。どんなストレージなのか、伝えてみよう。</p></aside>
+<aside class="panel guide"><h2>📖 冒険者の書</h2><p id="category" class="eyebrow" th:text="${question.category}"></p><h3 id="guide-title" th:text="${question.adventureBook.title}"></h3><p id="guide-body" th:text="${question.adventureBook.body}"></p><a id="official-doc" th:href="${question.adventureBook.officialDocUrl}" target="_blank" rel="noopener noreferrer">AWS公式ドキュメントを開く ↗</a><p id="prompt" th:text="${question.question}"></p><details><summary>回答例・判定方法</summary><p>AI未使用のため、回答例と同じ内容・語順で答えてください。空白・句点・末尾の「だ／です」は許容します。言い換えなど判定できない回答は再回答となります。</p><p id="sample-answer" th:text="${question.sampleAnswer}"></p></details></aside>
 </div>
-<section class="panel answer-panel"><form id="answer-form" th:attr="data-question-id=${question.questionId},data-answer-url=@{/api/battle/answer}"><label for="answer">あなたの回答</label><textarea id="answer" name="answer" required maxlength="2000" rows="3" placeholder="S3はどんなストレージ？ 自分の言葉で答えよう。"></textarea><div class="actions"><span>学習資料は何度でも読めます</span><button id="attack" type="submit">⚔ 攻撃する</button></div><p id="error" role="alert"></p></form></section>
-</main></body></html>
+<section class="panel answer-panel"><form id="answer-form" th:attr="data-question-id=${question.id},data-answer-url=@{/api/battle/answer},data-questions-url=@{/api/battle/questions}"><label for="answer">あなたの回答</label><textarea id="answer" name="answer" required maxlength="2000" rows="3" placeholder="敵の間違いを正そう。"></textarea><div class="actions"><span>学習資料は何度でも読めます</span><button id="attack" type="submit">⚔ 攻撃する</button></div><p id="error" role="alert"></p></form></section>
+<section id="game-clear" class="panel" hidden tabindex="-1"><h2>🏆 GAME CLEAR!</h2><p>全<span th:text="${total}"></span>問クリア！ AWSの冒険を完走しました。</p><button id="restart" type="button">最初から遊ぶ</button></section></main></body></html>

@@ -1,0 +1,2419 @@
+{
+  "schemaVersion": "1.0",
+  "total": 100,
+  "questions": [
+    {
+      "id": "AWS-001",
+      "stage": 1,
+      "area": "S3の湖",
+      "category": "S3",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "S3 スライム",
+        "face": "(・ω・)",
+        "maxHp": 100,
+        "statement": "S3はブロックストレージだ！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "S3の知識",
+        "body": "S3はオブジェクトストレージ。データをオブジェクトとしてバケットに保存する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      },
+      "sampleAnswer": "S3はオブジェクトストレージだ",
+      "keywords": [
+        "オブジェクト"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-002",
+      "stage": 2,
+      "area": "S3の湖",
+      "category": "S3",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "S3 ゴーレム",
+        "face": "(｀・ω・´)",
+        "maxHp": 100,
+        "statement": "S3のデータはバケットを使わず保存する！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "S3の知識",
+        "body": "S3のオブジェクトはバケットに格納する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      },
+      "sampleAnswer": "バケットに保存する",
+      "keywords": [
+        "バケット"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-003",
+      "stage": 3,
+      "area": "S3の湖",
+      "category": "S3",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "S3 ウルフ",
+        "face": "(ง •̀_•́)ง",
+        "maxHp": 100,
+        "statement": "S3のオブジェクトにはキーがない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "S3の知識",
+        "body": "オブジェクトにはバケット内で識別するキーがある。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      },
+      "sampleAnswer": "オブジェクトキーがある",
+      "keywords": [
+        "キー"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-004",
+      "stage": 4,
+      "area": "S3の湖",
+      "category": "S3",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "S3 ガーディアン",
+        "face": "(￣▽￣)",
+        "maxHp": 100,
+        "statement": "S3のバージョニングは過去版を残せない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "S3の知識",
+        "body": "バージョニングで同じキーの複数バージョンを保持できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      },
+      "sampleAnswer": "過去のバージョンを保持できる",
+      "keywords": [
+        "バージョン"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-005",
+      "stage": 5,
+      "area": "S3の湖",
+      "category": "S3",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "S3 ゴブリン",
+        "face": "(¬_¬)",
+        "maxHp": 100,
+        "statement": "S3のストレージクラスは1種類だけだ！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "S3の知識",
+        "body": "S3にはStandardやStandard-IAなど複数のストレージクラスがある。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      },
+      "sampleAnswer": "複数のストレージクラスがある",
+      "keywords": [
+        "ストレージクラス"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-006",
+      "stage": 6,
+      "area": "S3の湖",
+      "category": "S3",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "S3 ドラゴン",
+        "face": "(⊙_⊙)",
+        "maxHp": 100,
+        "statement": "S3ライフサイクルはオブジェクトの移行に使えない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "S3の知識",
+        "body": "ライフサイクルルールでストレージクラス移行や期限切れ削除を設定できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      },
+      "sampleAnswer": "自動で移行や削除ができる",
+      "keywords": [
+        "ライフサイクル"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-007",
+      "stage": 7,
+      "area": "S3の湖",
+      "category": "S3",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "S3 ウィザード",
+        "face": "(ಠ_ಠ)",
+        "maxHp": 100,
+        "statement": "S3のオブジェクトは最初から全世界に公開される！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "S3の知識",
+        "body": "S3のバケットとオブジェクトはデフォルトで非公開。明示的なアクセス許可が必要。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      },
+      "sampleAnswer": "デフォルトは非公開",
+      "keywords": [
+        "非公開"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-008",
+      "stage": 8,
+      "area": "S3の湖",
+      "category": "S3",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "S3 ナイト",
+        "face": "(╬ಠ益ಠ)",
+        "maxHp": 100,
+        "statement": "S3のオブジェクトを取得するのにバケット名は不要だ！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "S3の知識",
+        "body": "S3ではバケットとオブジェクトキーを使って対象を指定する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      },
+      "sampleAnswer": "バケットとキーで指定する",
+      "keywords": [
+        "バケット",
+        "キー"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-009",
+      "stage": 9,
+      "area": "S3の湖",
+      "category": "S3",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "S3 ファントム",
+        "face": "(ﾟДﾟ)",
+        "maxHp": 100,
+        "statement": "S3は静的Webサイトのファイルを保存できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "S3の知識",
+        "body": "S3は静的Webサイト用のファイルを格納できる。公開方法とアクセス制御には注意する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      },
+      "sampleAnswer": "静的サイトのファイルを保存できる",
+      "keywords": [
+        "静的"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-010",
+      "stage": 10,
+      "area": "S3の湖",
+      "category": "S3",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "S3 アイ",
+        "face": "(｡•̀ᴗ-)✧",
+        "maxHp": 100,
+        "statement": "S3の暗号化は一切できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "S3の知識",
+        "body": "S3はサーバー側暗号化などの暗号化機能を提供する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+      },
+      "sampleAnswer": "S3は暗号化できる",
+      "keywords": [
+        "暗号化"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-011",
+      "stage": 11,
+      "area": "EC2の砦",
+      "category": "EC2",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "EC2 キング",
+        "face": "(ΦωΦ)",
+        "maxHp": 100,
+        "statement": "EC2は物理サーバーを購入するサービスだ！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "EC2の知識",
+        "body": "EC2はクラウド上で仮想サーバー等のコンピューティングリソースを利用するサービス。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+      },
+      "sampleAnswer": "クラウド上の仮想サーバーを利用する",
+      "keywords": [
+        "仮想サーバー"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-012",
+      "stage": 12,
+      "area": "EC2の砦",
+      "category": "EC2",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "EC2 ミミック",
+        "face": "(・∀・)",
+        "maxHp": 100,
+        "statement": "EC2のインスタンスタイプは1種類しかない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "EC2の知識",
+        "body": "EC2にはCPUやメモリ特性の異なるインスタンスタイプがある。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+      },
+      "sampleAnswer": "複数のインスタンスタイプがある",
+      "keywords": [
+        "インスタンスタイプ"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-013",
+      "stage": 13,
+      "area": "EC2の砦",
+      "category": "EC2",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "EC2 バット",
+        "face": "(≧▽≦)",
+        "maxHp": 100,
+        "statement": "AMIはEC2起動には使えない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "EC2の知識",
+        "body": "AMIはEC2インスタンス起動時に使用するマシンイメージ。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+      },
+      "sampleAnswer": "AMIを使って起動する",
+      "keywords": [
+        "AMI"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-014",
+      "stage": 14,
+      "area": "EC2の砦",
+      "category": "EC2",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "EC2 グリフォン",
+        "face": "(；一_一)",
+        "maxHp": 100,
+        "statement": "EC2は停止しても必ずコンピューティング料金が発生する！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "EC2の知識",
+        "body": "通常のEBS-backedインスタンスは停止中のインスタンス利用料金が発生しないがEBS等の料金は残り得る。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+      },
+      "sampleAnswer": "停止中のインスタンス料金は通常かからないがストレージ料金は別",
+      "keywords": [
+        "停止",
+        "ストレージ"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-015",
+      "stage": 15,
+      "area": "EC2の砦",
+      "category": "EC2",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "EC2 サーペント",
+        "face": "(๑•̀ㅂ•́)و",
+        "maxHp": 100,
+        "statement": "EBSはオブジェクトストレージだ！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "EC2の知識",
+        "body": "EBSはEC2などで利用するブロックストレージ。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+      },
+      "sampleAnswer": "EBSはブロックストレージ",
+      "keywords": [
+        "ブロック"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-016",
+      "stage": 16,
+      "area": "EC2の砦",
+      "category": "EC2",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "EC2 オーガ",
+        "face": "( ´•ω•` )",
+        "maxHp": 100,
+        "statement": "EBSスナップショットはバックアップに使えない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "EC2の知識",
+        "body": "EBSスナップショットはボリュームのポイントインタイムバックアップ。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+      },
+      "sampleAnswer": "スナップショットでバックアップできる",
+      "keywords": [
+        "スナップショット"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-017",
+      "stage": 17,
+      "area": "EC2の砦",
+      "category": "EC2",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "EC2 レイス",
+        "face": "(ง`0´)ง",
+        "maxHp": 100,
+        "statement": "EC2のユーザーデータは起動時設定に使えない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "EC2の知識",
+        "body": "ユーザーデータで起動時の初期化処理を指定できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+      },
+      "sampleAnswer": "ユーザーデータで初期化できる",
+      "keywords": [
+        "ユーザーデータ"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-018",
+      "stage": 18,
+      "area": "EC2の砦",
+      "category": "EC2",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "EC2 ビースト",
+        "face": "(⊙﹏⊙)",
+        "maxHp": 100,
+        "statement": "EC2のキーペアはSSH接続に一切関係ない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "EC2の知識",
+        "body": "対応するLinuxインスタンスではキーペアをSSH認証に利用できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+      },
+      "sampleAnswer": "SSH認証にキーペアを使える",
+      "keywords": [
+        "キーペア"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-019",
+      "stage": 19,
+      "area": "EC2の砦",
+      "category": "EC2",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "EC2 メイジ",
+        "face": "(•̀ᴗ•́)و",
+        "maxHp": 100,
+        "statement": "EC2のインスタンスメタデータは取得できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "EC2の知識",
+        "body": "インスタンスメタデータサービスでインスタンスに関する情報を取得できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+      },
+      "sampleAnswer": "メタデータを取得できる",
+      "keywords": [
+        "メタデータ"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-020",
+      "stage": 20,
+      "area": "EC2の砦",
+      "category": "EC2",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "EC2 センチネル",
+        "face": "(￣へ￣)",
+        "maxHp": 100,
+        "statement": "EC2にはパブリックIPを割り当てられない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "EC2の知識",
+        "body": "EC2には設定に応じてパブリックIPv4アドレスを割り当てられる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+      },
+      "sampleAnswer": "パブリックIPを割り当てられる",
+      "keywords": [
+        "パブリック"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-021",
+      "stage": 21,
+      "area": "VPCの森",
+      "category": "VPC",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "VPC スライム",
+        "face": "(・ω・)",
+        "maxHp": 100,
+        "statement": "VPCを作れば全EC2が自動でインターネット接続する！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "VPCの知識",
+        "body": "接続にはゲートウェイ、ルート、IP、通信許可などの条件が必要。",
+        "officialDocUrl": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
+      },
+      "sampleAnswer": "VPCだけでは接続できない",
+      "keywords": [
+        "ルート",
+        "ゲートウェイ"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-022",
+      "stage": 22,
+      "area": "VPCの森",
+      "category": "VPC",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "VPC ゴーレム",
+        "face": "(｀・ω・´)",
+        "maxHp": 100,
+        "statement": "VPCは必ず1つのAZにしか存在しない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "VPCの知識",
+        "body": "VPCはリージョン内の複数AZにまたがる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
+      },
+      "sampleAnswer": "VPCは複数AZにまたがる",
+      "keywords": [
+        "AZ"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-023",
+      "stage": 23,
+      "area": "VPCの森",
+      "category": "VPC",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "VPC ウルフ",
+        "face": "(ง •̀_•́)ง",
+        "maxHp": 100,
+        "statement": "サブネットは複数AZにまたがる！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "VPCの知識",
+        "body": "1つのサブネットは1つのAZに属する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
+      },
+      "sampleAnswer": "サブネットは1つのAZ",
+      "keywords": [
+        "サブネット",
+        "AZ"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-024",
+      "stage": 24,
+      "area": "VPCの森",
+      "category": "VPC",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "VPC ガーディアン",
+        "face": "(￣▽￣)",
+        "maxHp": 100,
+        "statement": "ルートテーブルは通信先を決められない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "VPCの知識",
+        "body": "ルートテーブルは宛先とターゲットを指定して通信経路を制御する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
+      },
+      "sampleAnswer": "ルートテーブルで経路を決める",
+      "keywords": [
+        "ルートテーブル"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-025",
+      "stage": 25,
+      "area": "VPCの森",
+      "category": "VPC",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "VPC ゴブリン",
+        "face": "(¬_¬)",
+        "maxHp": 100,
+        "statement": "パブリックサブネットはEC2にパブリックIPがあれば成立する！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "VPCの知識",
+        "body": "IPv4のパブリックサブネットは通常IGWへのルートを持つサブネット。",
+        "officialDocUrl": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
+      },
+      "sampleAnswer": "IGWへのルートが重要",
+      "keywords": [
+        "IGW",
+        "ルート"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-026",
+      "stage": 26,
+      "area": "VPCの森",
+      "category": "VPC",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "VPC ドラゴン",
+        "face": "(⊙_⊙)",
+        "maxHp": 100,
+        "statement": "Internet GatewayはVPCに接続できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "VPCの知識",
+        "body": "Internet GatewayをVPCにアタッチしてインターネット接続に利用できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
+      },
+      "sampleAnswer": "VPCにIGWを接続できる",
+      "keywords": [
+        "Internet Gateway"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-027",
+      "stage": 27,
+      "area": "VPCの森",
+      "category": "VPC",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "VPC ウィザード",
+        "face": "(ಠ_ಠ)",
+        "maxHp": 100,
+        "statement": "Security Groupには拒否ルールを明示設定できる！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "VPCの知識",
+        "body": "Security Groupは許可ルールを設定するステートフルな制御。",
+        "officialDocUrl": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
+      },
+      "sampleAnswer": "許可ルールのみ",
+      "keywords": [
+        "許可"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-028",
+      "stage": 28,
+      "area": "VPCの森",
+      "category": "VPC",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "VPC ナイト",
+        "face": "(╬ಠ益ಠ)",
+        "maxHp": 100,
+        "statement": "Network ACLはステートフルだ！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "VPCの知識",
+        "body": "Network ACLはステートレスで、インバウンドとアウトバウンドを個別に評価する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
+      },
+      "sampleAnswer": "NACLはステートレス",
+      "keywords": [
+        "ステートレス"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-029",
+      "stage": 29,
+      "area": "VPCの森",
+      "category": "VPC",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "VPC ファントム",
+        "face": "(ﾟДﾟ)",
+        "maxHp": 100,
+        "statement": "VPCピアリングはVPC間接続に使えない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "VPCの知識",
+        "body": "VPCピアリングで対応するVPC間のプライベート接続を構成できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
+      },
+      "sampleAnswer": "VPC同士を接続できる",
+      "keywords": [
+        "ピアリング"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-030",
+      "stage": 30,
+      "area": "VPCの森",
+      "category": "VPC",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "VPC アイ",
+        "face": "(｡•̀ᴗ-)✧",
+        "maxHp": 100,
+        "statement": "VPCエンドポイントはAWSサービスへのプライベート接続に使えない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "VPCの知識",
+        "body": "対応サービスにはVPCエンドポイントを使い、インターネットを経由しない接続ができる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
+      },
+      "sampleAnswer": "VPCエンドポイントでプライベート接続",
+      "keywords": [
+        "エンドポイント"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-031",
+      "stage": 31,
+      "area": "通信の峡谷",
+      "category": "Network",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "Network キング",
+        "face": "(ΦωΦ)",
+        "maxHp": 100,
+        "statement": "プライベートIPv4だけのEC2はIGWへのルートだけで直接インターネットに出られる！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Networkの知識",
+        "body": "一般的なIPv4構成ではパブリックNAT Gatewayなどを介して外向き通信する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      },
+      "sampleAnswer": "NAT Gatewayなどが必要",
+      "keywords": [
+        "NAT"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-032",
+      "stage": 32,
+      "area": "通信の峡谷",
+      "category": "Network",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "Network ミミック",
+        "face": "(・∀・)",
+        "maxHp": 100,
+        "statement": "パブリックNAT Gatewayは通常プライベートサブネットに置く！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Networkの知識",
+        "body": "インターネット向けのパブリックNAT Gatewayはパブリックサブネットに配置する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      },
+      "sampleAnswer": "パブリックサブネットに置く",
+      "keywords": [
+        "パブリック"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-033",
+      "stage": 33,
+      "area": "通信の峡谷",
+      "category": "Network",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "Network バット",
+        "face": "(≧▽≦)",
+        "maxHp": 100,
+        "statement": "NAT Gatewayはインターネットからの任意の着信をEC2に転送する！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Networkの知識",
+        "body": "NAT Gatewayはプライベート側から開始した通信の応答を扱うが未要求の外部接続を受け付けない。",
+        "officialDocUrl": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      },
+      "sampleAnswer": "外から勝手に接続できない",
+      "keywords": [
+        "着信"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-034",
+      "stage": 34,
+      "area": "通信の峡谷",
+      "category": "Network",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "Network グリフォン",
+        "face": "(；一_一)",
+        "maxHp": 100,
+        "statement": "ALBは必ず1台にしかリクエストを送れない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Networkの知識",
+        "body": "ALBは複数ターゲットにHTTP/HTTPSリクエストを振り分けられる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      },
+      "sampleAnswer": "複数のターゲットに分散できる",
+      "keywords": [
+        "複数",
+        "分散"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-035",
+      "stage": 35,
+      "area": "通信の峡谷",
+      "category": "Network",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "Network サーペント",
+        "face": "(๑•̀ㅂ•́)و",
+        "maxHp": 100,
+        "statement": "ALBはURLパスによる振り分けができない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Networkの知識",
+        "body": "ALBはパスベースルーティングをサポートする。",
+        "officialDocUrl": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      },
+      "sampleAnswer": "パスで振り分けできる",
+      "keywords": [
+        "パス"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-036",
+      "stage": 36,
+      "area": "通信の峡谷",
+      "category": "Network",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "Network オーガ",
+        "face": "( ´•ω•` )",
+        "maxHp": 100,
+        "statement": "NLBはHTTPパスで振り分けるのが主な役割だ！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Networkの知識",
+        "body": "NLBは主にL4のTCP/UDP等を扱う。HTTPパス条件にはALBが適する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      },
+      "sampleAnswer": "NLBはL4でALBはパスルーティング",
+      "keywords": [
+        "L4",
+        "ALB"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-037",
+      "stage": 37,
+      "area": "通信の峡谷",
+      "category": "Network",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "Network レイス",
+        "face": "(ง`0´)ง",
+        "maxHp": 100,
+        "statement": "Route 53はDNSサービスではない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Networkの知識",
+        "body": "Route 53はDNS、ドメイン登録、ヘルスチェック等を提供する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      },
+      "sampleAnswer": "Route 53はDNSサービス",
+      "keywords": [
+        "DNS"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-038",
+      "stage": 38,
+      "area": "通信の峡谷",
+      "category": "Network",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "Network ビースト",
+        "face": "(⊙﹏⊙)",
+        "maxHp": 100,
+        "statement": "CloudFrontはコンテンツをエッジから配信できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Networkの知識",
+        "body": "CloudFrontはCDNとしてエッジロケーションからコンテンツを配信する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      },
+      "sampleAnswer": "CloudFrontはCDN",
+      "keywords": [
+        "CDN"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-039",
+      "stage": 39,
+      "area": "通信の峡谷",
+      "category": "Network",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "Network メイジ",
+        "face": "(•̀ᴗ•́)و",
+        "maxHp": 100,
+        "statement": "Direct ConnectはインターネットVPNと同じ接続方式だ！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Networkの知識",
+        "body": "Direct Connectは専用ネットワーク接続であり、インターネット経由のVPNとは異なる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      },
+      "sampleAnswer": "Direct Connectは専用接続",
+      "keywords": [
+        "専用"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-040",
+      "stage": 40,
+      "area": "通信の峡谷",
+      "category": "Network",
+      "difficulty": "初級",
+      "enemy": {
+        "name": "Network センチネル",
+        "face": "(￣へ￣)",
+        "maxHp": 100,
+        "statement": "Transit Gatewayは複数VPCの接続を集約できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Networkの知識",
+        "body": "Transit GatewayはVPCやオンプレミス接続を集約するハブとして使える。",
+        "officialDocUrl": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+      },
+      "sampleAnswer": "接続を集約できる",
+      "keywords": [
+        "集約"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-041",
+      "stage": 41,
+      "area": "Lambdaの神殿",
+      "category": "Lambda",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Lambda スライム",
+        "face": "(・ω・)",
+        "maxHp": 100,
+        "statement": "Lambdaの実行には必ず自分でEC2を管理する！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Lambdaの知識",
+        "body": "Lambdaはサーバー管理を抽象化したサーバーレス実行サービス。",
+        "officialDocUrl": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      },
+      "sampleAnswer": "EC2管理は不要",
+      "keywords": [
+        "サーバーレス"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-042",
+      "stage": 42,
+      "area": "Lambdaの神殿",
+      "category": "Lambda",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Lambda ゴーレム",
+        "face": "(｀・ω・´)",
+        "maxHp": 100,
+        "statement": "Lambda関数はイベントを契機に実行できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Lambdaの知識",
+        "body": "Lambdaはイベントソースや呼び出しで実行できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      },
+      "sampleAnswer": "イベントで起動できる",
+      "keywords": [
+        "イベント"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-043",
+      "stage": 43,
+      "area": "Lambdaの神殿",
+      "category": "Lambda",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Lambda ウルフ",
+        "face": "(ง •̀_•́)ง",
+        "maxHp": 100,
+        "statement": "Lambdaの最大実行時間は無制限だ！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Lambdaの知識",
+        "body": "Lambda関数の1回の実行にはタイムアウト上限がある（最大15分）。",
+        "officialDocUrl": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      },
+      "sampleAnswer": "最大15分",
+      "keywords": [
+        "15分"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-044",
+      "stage": 44,
+      "area": "Lambdaの神殿",
+      "category": "Lambda",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Lambda ガーディアン",
+        "face": "(￣▽￣)",
+        "maxHp": 100,
+        "statement": "Lambdaにはメモリ設定がない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Lambdaの知識",
+        "body": "Lambdaは関数のメモリ割り当てを設定でき、CPU能力にも影響する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      },
+      "sampleAnswer": "メモリを設定できる",
+      "keywords": [
+        "メモリ"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-045",
+      "stage": 45,
+      "area": "Lambdaの神殿",
+      "category": "Lambda",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Lambda ゴブリン",
+        "face": "(¬_¬)",
+        "maxHp": 100,
+        "statement": "Lambdaは同時実行できず常に1件ずつだ！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Lambdaの知識",
+        "body": "Lambdaは同時実行をサポートし、同時実行数の制御もできる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      },
+      "sampleAnswer": "同時実行できる",
+      "keywords": [
+        "同時実行"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-046",
+      "stage": 46,
+      "area": "Lambdaの神殿",
+      "category": "Lambda",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Lambda ドラゴン",
+        "face": "(⊙_⊙)",
+        "maxHp": 100,
+        "statement": "LambdaはIAM実行ロールを利用できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Lambdaの知識",
+        "body": "Lambdaは実行ロールの権限でAWSリソースにアクセスする。",
+        "officialDocUrl": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      },
+      "sampleAnswer": "実行ロールを使える",
+      "keywords": [
+        "実行ロール"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-047",
+      "stage": 47,
+      "area": "Lambdaの神殿",
+      "category": "Lambda",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Lambda ウィザード",
+        "face": "(ಠ_ಠ)",
+        "maxHp": 100,
+        "statement": "LambdaはCloudWatch Logsにログを送れない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Lambdaの知識",
+        "body": "適切な権限があればLambdaの実行ログをCloudWatch Logsに記録できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      },
+      "sampleAnswer": "CloudWatch Logsに記録できる",
+      "keywords": [
+        "CloudWatch"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-048",
+      "stage": 48,
+      "area": "Lambdaの神殿",
+      "category": "Lambda",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Lambda ナイト",
+        "face": "(╬ಠ益ಠ)",
+        "maxHp": 100,
+        "statement": "Lambdaは環境変数を設定できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Lambdaの知識",
+        "body": "Lambdaは環境変数で設定値を渡せる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      },
+      "sampleAnswer": "環境変数を設定できる",
+      "keywords": [
+        "環境変数"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-049",
+      "stage": 49,
+      "area": "Lambdaの神殿",
+      "category": "Lambda",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Lambda ファントム",
+        "face": "(ﾟДﾟ)",
+        "maxHp": 100,
+        "statement": "LambdaはS3イベントと連携できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Lambdaの知識",
+        "body": "S3のオブジェクト作成などを契機にLambdaを起動できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      },
+      "sampleAnswer": "S3イベントで起動できる",
+      "keywords": [
+        "S3",
+        "イベント"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-050",
+      "stage": 50,
+      "area": "Lambdaの神殿",
+      "category": "Lambda",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Lambda アイ",
+        "face": "(｡•̀ᴗ-)✧",
+        "maxHp": 100,
+        "statement": "LambdaはVPC内のリソースに接続できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Lambdaの知識",
+        "body": "VPC設定を行うことでLambdaからVPC内リソースへアクセスできる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+      },
+      "sampleAnswer": "VPC設定で接続できる",
+      "keywords": [
+        "VPC"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-051",
+      "stage": 51,
+      "area": "データベース城",
+      "category": "Database",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Database キング",
+        "face": "(ΦωΦ)",
+        "maxHp": 100,
+        "statement": "RDSでは必ずOSにログインしてパッチを手動適用する！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Databaseの知識",
+        "body": "RDSは基盤管理やパッチ適用を支援するマネージドDB。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      },
+      "sampleAnswer": "RDSはマネージドDB",
+      "keywords": [
+        "マネージド"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-052",
+      "stage": 52,
+      "area": "データベース城",
+      "category": "Database",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Database ミミック",
+        "face": "(・∀・)",
+        "maxHp": 100,
+        "statement": "RDSはリレーショナルデータベースではない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Databaseの知識",
+        "body": "RDSは複数のリレーショナルDBエンジンに対応する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      },
+      "sampleAnswer": "RDSはリレーショナルDB",
+      "keywords": [
+        "リレーショナル"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-053",
+      "stage": 53,
+      "area": "データベース城",
+      "category": "Database",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Database バット",
+        "face": "(≧▽≦)",
+        "maxHp": 100,
+        "statement": "RDSのMulti-AZは読み取り負荷分散が主目的だ！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Databaseの知識",
+        "body": "RDS Multi-AZ DBインスタンス配置は主に可用性向上とフェイルオーバーのために利用する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      },
+      "sampleAnswer": "Multi-AZは高可用性",
+      "keywords": [
+        "可用性"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-054",
+      "stage": 54,
+      "area": "データベース城",
+      "category": "Database",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Database グリフォン",
+        "face": "(；一_一)",
+        "maxHp": 100,
+        "statement": "RDSのリードレプリカは読み取りに使えない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Databaseの知識",
+        "body": "リードレプリカは読み取り処理のスケールアウトに利用できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      },
+      "sampleAnswer": "読み取りを分散できる",
+      "keywords": [
+        "読み取り"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-055",
+      "stage": 55,
+      "area": "データベース城",
+      "category": "Database",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Database サーペント",
+        "face": "(๑•̀ㅂ•́)و",
+        "maxHp": 100,
+        "statement": "RDSでは自動バックアップを設定できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Databaseの知識",
+        "body": "RDSは自動バックアップとポイントインタイム復元をサポートする。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      },
+      "sampleAnswer": "自動バックアップできる",
+      "keywords": [
+        "バックアップ"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-056",
+      "stage": 56,
+      "area": "データベース城",
+      "category": "Database",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Database オーガ",
+        "face": "( ´•ω•` )",
+        "maxHp": 100,
+        "statement": "DynamoDBはリレーショナルDBだ！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Databaseの知識",
+        "body": "DynamoDBはマネージドNoSQLデータベース。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      },
+      "sampleAnswer": "DynamoDBはNoSQL",
+      "keywords": [
+        "NoSQL"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-057",
+      "stage": 57,
+      "area": "データベース城",
+      "category": "Database",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Database レイス",
+        "face": "(ง`0´)ง",
+        "maxHp": 100,
+        "statement": "DynamoDBはパーティションキーを使わない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Databaseの知識",
+        "body": "DynamoDBテーブルの主キーにはパーティションキーが含まれる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      },
+      "sampleAnswer": "パーティションキーを使う",
+      "keywords": [
+        "パーティションキー"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-058",
+      "stage": 58,
+      "area": "データベース城",
+      "category": "Database",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Database ビースト",
+        "face": "(⊙﹏⊙)",
+        "maxHp": 100,
+        "statement": "DynamoDBのTTLは期限切れ項目を自動削除できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Databaseの知識",
+        "body": "TTLで有効期限を過ぎた項目を非同期に削除できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      },
+      "sampleAnswer": "TTLで期限切れを削除できる",
+      "keywords": [
+        "TTL"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-059",
+      "stage": 59,
+      "area": "データベース城",
+      "category": "Database",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Database メイジ",
+        "face": "(•̀ᴗ•́)و",
+        "maxHp": 100,
+        "statement": "AuroraはMySQLやPostgreSQLと互換性がない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Databaseの知識",
+        "body": "AuroraにはMySQL互換エディションとPostgreSQL互換エディションがある。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      },
+      "sampleAnswer": "MySQLとPostgreSQL互換",
+      "keywords": [
+        "MySQL",
+        "PostgreSQL"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-060",
+      "stage": 60,
+      "area": "データベース城",
+      "category": "Database",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Database センチネル",
+        "face": "(￣へ￣)",
+        "maxHp": 100,
+        "statement": "ElastiCacheはキャッシュに使えない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Databaseの知識",
+        "body": "ElastiCacheはマネージドインメモリキャッシュとして利用できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+      },
+      "sampleAnswer": "ElastiCacheはキャッシュ",
+      "keywords": [
+        "キャッシュ"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-061",
+      "stage": 61,
+      "area": "権限の迷宮",
+      "category": "IAM",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "IAM スライム",
+        "face": "(・ω・)",
+        "maxHp": 100,
+        "statement": "IAMは全員にすべての操作を許可するしかない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "IAMの知識",
+        "body": "IAMポリシーで必要なアクションやリソースに権限を絞れる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
+      },
+      "sampleAnswer": "最小権限を設定できる",
+      "keywords": [
+        "最小権限"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-062",
+      "stage": 62,
+      "area": "権限の迷宮",
+      "category": "IAM",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "IAM ゴーレム",
+        "face": "(｀・ω・´)",
+        "maxHp": 100,
+        "statement": "IAMポリシーに明示的Denyは書けない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "IAMの知識",
+        "body": "IAMポリシーには明示的なDenyを設定でき、評価で優先される。",
+        "officialDocUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
+      },
+      "sampleAnswer": "明示的Denyがある",
+      "keywords": [
+        "Deny"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-063",
+      "stage": 63,
+      "area": "権限の迷宮",
+      "category": "IAM",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "IAM ウルフ",
+        "face": "(ง •̀_•́)ง",
+        "maxHp": 100,
+        "statement": "IAMロールは一時的な認証情報を使えない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "IAMの知識",
+        "body": "IAMロールの引き受けでは一時的な認証情報が提供される。",
+        "officialDocUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
+      },
+      "sampleAnswer": "ロールは一時認証情報を使う",
+      "keywords": [
+        "一時"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-064",
+      "stage": 64,
+      "area": "権限の迷宮",
+      "category": "IAM",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "IAM ガーディアン",
+        "face": "(￣▽￣)",
+        "maxHp": 100,
+        "statement": "IAMユーザーは必ず長期アクセスキーが必要だ！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "IAMの知識",
+        "body": "IAMユーザーにアクセスキーを作成しない運用も可能。",
+        "officialDocUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
+      },
+      "sampleAnswer": "アクセスキーは必須ではない",
+      "keywords": [
+        "アクセスキー"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-065",
+      "stage": 65,
+      "area": "権限の迷宮",
+      "category": "IAM",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "IAM ゴブリン",
+        "face": "(¬_¬)",
+        "maxHp": 100,
+        "statement": "MFAはアカウント保護に役立たない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "IAMの知識",
+        "body": "MFAはパスワードなどに追加の認証要素を要求し保護を強化する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
+      },
+      "sampleAnswer": "MFAは多要素認証",
+      "keywords": [
+        "MFA"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-066",
+      "stage": 66,
+      "area": "権限の迷宮",
+      "category": "IAM",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "IAM ドラゴン",
+        "face": "(⊙_⊙)",
+        "maxHp": 100,
+        "statement": "AWS Organizationsは複数アカウント管理に使えない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "IAMの知識",
+        "body": "Organizationsは複数AWSアカウントを一元管理する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
+      },
+      "sampleAnswer": "複数アカウントを管理できる",
+      "keywords": [
+        "Organizations"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-067",
+      "stage": 67,
+      "area": "権限の迷宮",
+      "category": "IAM",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "IAM ウィザード",
+        "face": "(ಠ_ಠ)",
+        "maxHp": 100,
+        "statement": "SCPはアカウントに権限を直接付与する！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "IAMの知識",
+        "body": "SCPは組織内で利用可能な権限の上限を制限し、直接権限を付与しない。",
+        "officialDocUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
+      },
+      "sampleAnswer": "SCPは権限の上限",
+      "keywords": [
+        "上限"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-068",
+      "stage": 68,
+      "area": "権限の迷宮",
+      "category": "IAM",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "IAM ナイト",
+        "face": "(╬ಠ益ಠ)",
+        "maxHp": 100,
+        "statement": "Secrets Managerはシークレットの保存に使えない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "IAMの知識",
+        "body": "Secrets ManagerはAPIキーやDB認証情報等のシークレット管理に使える。",
+        "officialDocUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
+      },
+      "sampleAnswer": "シークレットを保存管理できる",
+      "keywords": [
+        "シークレット"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-069",
+      "stage": 69,
+      "area": "権限の迷宮",
+      "category": "IAM",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "IAM ファントム",
+        "face": "(ﾟДﾟ)",
+        "maxHp": 100,
+        "statement": "KMSは暗号鍵管理と無関係だ！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "IAMの知識",
+        "body": "KMSは暗号化キーの作成・管理・利用を支援する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
+      },
+      "sampleAnswer": "KMSは鍵管理",
+      "keywords": [
+        "鍵"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-070",
+      "stage": 70,
+      "area": "権限の迷宮",
+      "category": "IAM",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "IAM アイ",
+        "face": "(｡•̀ᴗ-)✧",
+        "maxHp": 100,
+        "statement": "CloudTrailはAWS API操作の記録に使えない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "IAMの知識",
+        "body": "CloudTrailはAWSアカウントのAPIアクティビティを記録する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
+      },
+      "sampleAnswer": "CloudTrailはAPI操作を記録",
+      "keywords": [
+        "API"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-071",
+      "stage": 71,
+      "area": "監視の塔",
+      "category": "Monitor",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Monitor キング",
+        "face": "(ΦωΦ)",
+        "maxHp": 100,
+        "statement": "CloudWatchはEC2のCPU使用率しか扱えない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Monitorの知識",
+        "body": "CloudWatchはメトリクス、ログ、アラームなどを扱う。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html"
+      },
+      "sampleAnswer": "ログやアラームも扱える",
+      "keywords": [
+        "ログ",
+        "アラーム"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-072",
+      "stage": 72,
+      "area": "監視の塔",
+      "category": "Monitor",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Monitor ミミック",
+        "face": "(・∀・)",
+        "maxHp": 100,
+        "statement": "CloudWatchアラームはメトリクスを監視できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Monitorの知識",
+        "body": "CloudWatchアラームはメトリクス等に基づいて状態を評価する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html"
+      },
+      "sampleAnswer": "メトリクスでアラームを作れる",
+      "keywords": [
+        "メトリクス"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-073",
+      "stage": 73,
+      "area": "監視の塔",
+      "category": "Monitor",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Monitor バット",
+        "face": "(≧▽≦)",
+        "maxHp": 100,
+        "statement": "CloudWatch Logsにはアプリログを保存できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Monitorの知識",
+        "body": "CloudWatch Logsにアプリケーション等のログを収集できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html"
+      },
+      "sampleAnswer": "ログを保存できる",
+      "keywords": [
+        "ログ"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-074",
+      "stage": 74,
+      "area": "監視の塔",
+      "category": "Monitor",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Monitor グリフォン",
+        "face": "(；一_一)",
+        "maxHp": 100,
+        "statement": "CloudTrailとCloudWatch Logsは完全に同じサービスだ！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Monitorの知識",
+        "body": "CloudTrailは主にAPIアクティビティ記録、CloudWatch Logsはログ収集・保存・分析。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html"
+      },
+      "sampleAnswer": "役割が違う",
+      "keywords": [
+        "CloudTrail",
+        "CloudWatch"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-075",
+      "stage": 75,
+      "area": "監視の塔",
+      "category": "Monitor",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Monitor サーペント",
+        "face": "(๑•̀ㅂ•́)و",
+        "maxHp": 100,
+        "statement": "EventBridgeはイベントに応じた処理を起動できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Monitorの知識",
+        "body": "EventBridgeルールでイベントを条件にターゲットを呼び出せる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html"
+      },
+      "sampleAnswer": "イベントを契機に処理できる",
+      "keywords": [
+        "イベント"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-076",
+      "stage": 76,
+      "area": "監視の塔",
+      "category": "Monitor",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Monitor オーガ",
+        "face": "( ´•ω•` )",
+        "maxHp": 100,
+        "statement": "SNSはメッセージ配信に使えない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Monitorの知識",
+        "body": "SNSはPub/Sub型の通知やメッセージ配信を提供する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html"
+      },
+      "sampleAnswer": "SNSは通知配信",
+      "keywords": [
+        "通知"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-077",
+      "stage": 77,
+      "area": "監視の塔",
+      "category": "Monitor",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Monitor レイス",
+        "face": "(ง`0´)ง",
+        "maxHp": 100,
+        "statement": "SQSはメッセージをキューに蓄積できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Monitorの知識",
+        "body": "SQSは分散システム間のメッセージをキューで受け渡す。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html"
+      },
+      "sampleAnswer": "SQSはキュー",
+      "keywords": [
+        "キュー"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-078",
+      "stage": 78,
+      "area": "監視の塔",
+      "category": "Monitor",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Monitor ビースト",
+        "face": "(⊙﹏⊙)",
+        "maxHp": 100,
+        "statement": "SQS標準キューは必ず厳密な順序を保証する！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Monitorの知識",
+        "body": "標準キューはベストエフォート順序。厳密な順序要件にはFIFOキューを検討する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html"
+      },
+      "sampleAnswer": "標準キューは厳密順序を保証しない",
+      "keywords": [
+        "FIFO"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-079",
+      "stage": 79,
+      "area": "監視の塔",
+      "category": "Monitor",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Monitor メイジ",
+        "face": "(•̀ᴗ•́)و",
+        "maxHp": 100,
+        "statement": "Step Functionsはワークフローを組めない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Monitorの知識",
+        "body": "Step Functionsは状態マシンで複数処理のワークフローを構築できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html"
+      },
+      "sampleAnswer": "状態マシンでワークフローを作れる",
+      "keywords": [
+        "状態マシン"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-080",
+      "stage": 80,
+      "area": "監視の塔",
+      "category": "Monitor",
+      "difficulty": "中級",
+      "enemy": {
+        "name": "Monitor センチネル",
+        "face": "(￣へ￣)",
+        "maxHp": 100,
+        "statement": "X-Rayは分散トレースに利用できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Monitorの知識",
+        "body": "AWS X-Rayは対応するアプリケーションのリクエストをトレースして分析する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html"
+      },
+      "sampleAnswer": "分散トレースに使える",
+      "keywords": [
+        "トレース"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-081",
+      "stage": 81,
+      "area": "世界樹の頂",
+      "category": "Scaling",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Scaling スライム",
+        "face": "(・ω・)",
+        "maxHp": 100,
+        "statement": "EC2 Auto Scalingは増やすことしかできない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Scalingの知識",
+        "body": "Auto Scalingは設定に従ってインスタンス数を増減できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+      },
+      "sampleAnswer": "増減できる",
+      "keywords": [
+        "増減"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-082",
+      "stage": 82,
+      "area": "世界樹の頂",
+      "category": "Scaling",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Scaling ゴーレム",
+        "face": "(｀・ω・´)",
+        "maxHp": 100,
+        "statement": "Auto Scalingグループに最小容量は設定できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Scalingの知識",
+        "body": "Auto Scalingグループには最小・最大・希望容量を設定できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+      },
+      "sampleAnswer": "最小最大容量を設定できる",
+      "keywords": [
+        "最小",
+        "最大"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-083",
+      "stage": 83,
+      "area": "世界樹の頂",
+      "category": "Scaling",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Scaling ウルフ",
+        "face": "(ง •̀_•́)ง",
+        "maxHp": 100,
+        "statement": "Auto Scalingはロードバランサーと連携できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Scalingの知識",
+        "body": "Auto Scalingグループはロードバランサーと連携できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+      },
+      "sampleAnswer": "ロードバランサーと連携できる",
+      "keywords": [
+        "ロードバランサー"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-084",
+      "stage": 84,
+      "area": "世界樹の頂",
+      "category": "Scaling",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Scaling ガーディアン",
+        "face": "(￣▽￣)",
+        "maxHp": 100,
+        "statement": "ALBのヘルスチェックは異常ターゲットを識別できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Scalingの知識",
+        "body": "ターゲットグループのヘルスチェックでターゲットの状態を判定する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+      },
+      "sampleAnswer": "ヘルスチェックで異常を検出",
+      "keywords": [
+        "ヘルスチェック"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-085",
+      "stage": 85,
+      "area": "世界樹の頂",
+      "category": "Scaling",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Scaling ゴブリン",
+        "face": "(¬_¬)",
+        "maxHp": 100,
+        "statement": "複数AZに配置しても可用性には意味がない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Scalingの知識",
+        "body": "複数AZへの配置は単一AZ障害への耐性を高める。",
+        "officialDocUrl": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+      },
+      "sampleAnswer": "複数AZで可用性向上",
+      "keywords": [
+        "複数AZ"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-086",
+      "stage": 86,
+      "area": "世界樹の頂",
+      "category": "Scaling",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Scaling ドラゴン",
+        "face": "(⊙_⊙)",
+        "maxHp": 100,
+        "statement": "CloudFormationはインフラをコードで管理できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Scalingの知識",
+        "body": "CloudFormationはテンプレートでAWSリソースを宣言的に管理する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+      },
+      "sampleAnswer": "IaCで管理できる",
+      "keywords": [
+        "CloudFormation"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-087",
+      "stage": 87,
+      "area": "世界樹の頂",
+      "category": "Scaling",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Scaling ウィザード",
+        "face": "(ಠ_ಠ)",
+        "maxHp": 100,
+        "statement": "CloudFormationスタックはリソースをまとめて管理できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Scalingの知識",
+        "body": "スタックはテンプレートで定義した関連リソースを管理する単位。",
+        "officialDocUrl": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+      },
+      "sampleAnswer": "スタックでまとめて管理",
+      "keywords": [
+        "スタック"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-088",
+      "stage": 88,
+      "area": "世界樹の頂",
+      "category": "Scaling",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Scaling ナイト",
+        "face": "(╬ಠ益ಠ)",
+        "maxHp": 100,
+        "statement": "AWS Backupはバックアップを集中管理できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Scalingの知識",
+        "body": "AWS Backupは対応AWSサービスのバックアップを集中管理できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+      },
+      "sampleAnswer": "バックアップを集中管理",
+      "keywords": [
+        "バックアップ"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-089",
+      "stage": 89,
+      "area": "世界樹の頂",
+      "category": "Scaling",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Scaling ファントム",
+        "face": "(ﾟДﾟ)",
+        "maxHp": 100,
+        "statement": "AWS Well-Architectedは設計を評価する枠組みではない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Scalingの知識",
+        "body": "Well-Architected Frameworkはクラウド設計のベストプラクティスを検討する枠組み。",
+        "officialDocUrl": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+      },
+      "sampleAnswer": "設計レビューの枠組み",
+      "keywords": [
+        "Well-Architected"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-090",
+      "stage": 90,
+      "area": "世界樹の頂",
+      "category": "Scaling",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Scaling アイ",
+        "face": "(｡•̀ᴗ-)✧",
+        "maxHp": 100,
+        "statement": "Cost ExplorerはAWS費用の分析に使えない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Scalingの知識",
+        "body": "Cost ExplorerはAWSコストと使用状況の分析に利用できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+      },
+      "sampleAnswer": "コストを分析できる",
+      "keywords": [
+        "コスト"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-091",
+      "stage": 91,
+      "area": "コンテナの港",
+      "category": "Containers",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Containers キング",
+        "face": "(ΦωΦ)",
+        "maxHp": 100,
+        "statement": "ECSはコンテナを実行できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Containersの知識",
+        "body": "ECSはコンテナ化したアプリケーションのオーケストレーションサービス。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html"
+      },
+      "sampleAnswer": "ECSでコンテナを実行できる",
+      "keywords": [
+        "コンテナ"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-092",
+      "stage": 92,
+      "area": "コンテナの港",
+      "category": "Containers",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Containers ミミック",
+        "face": "(・∀・)",
+        "maxHp": 100,
+        "statement": "Fargateを使うと必ずEC2インスタンスを自分で管理する！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Containersの知識",
+        "body": "Fargateはサーバー管理を抽象化してコンテナを実行する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html"
+      },
+      "sampleAnswer": "Fargateはサーバーレス",
+      "keywords": [
+        "Fargate"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-093",
+      "stage": 93,
+      "area": "コンテナの港",
+      "category": "Containers",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Containers バット",
+        "face": "(≧▽≦)",
+        "maxHp": 100,
+        "statement": "ECRはコンテナイメージを保存できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Containersの知識",
+        "body": "ECRはコンテナイメージの保存・管理に使うレジストリ。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html"
+      },
+      "sampleAnswer": "ECRはイメージレジストリ",
+      "keywords": [
+        "イメージ"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-094",
+      "stage": 94,
+      "area": "コンテナの港",
+      "category": "Containers",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Containers グリフォン",
+        "face": "(；一_一)",
+        "maxHp": 100,
+        "statement": "EKSはKubernetesと無関係だ！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Containersの知識",
+        "body": "EKSはマネージドKubernetesサービス。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html"
+      },
+      "sampleAnswer": "EKSはKubernetes",
+      "keywords": [
+        "Kubernetes"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-095",
+      "stage": 95,
+      "area": "コンテナの港",
+      "category": "Containers",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Containers サーペント",
+        "face": "(๑•̀ㅂ•́)و",
+        "maxHp": 100,
+        "statement": "ECSタスク定義はコンテナ設定を記述できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Containersの知識",
+        "body": "タスク定義でイメージ、CPU、メモリなどを定義する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html"
+      },
+      "sampleAnswer": "タスク定義に設定を書く",
+      "keywords": [
+        "タスク定義"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-096",
+      "stage": 96,
+      "area": "コンテナの港",
+      "category": "Containers",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Containers オーガ",
+        "face": "( ´•ω•` )",
+        "maxHp": 100,
+        "statement": "ECSサービスは希望タスク数を維持できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Containersの知識",
+        "body": "ECSサービスは設定した希望タスク数を維持するよう動作する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html"
+      },
+      "sampleAnswer": "希望タスク数を維持する",
+      "keywords": [
+        "希望タスク数"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-097",
+      "stage": 97,
+      "area": "コンテナの港",
+      "category": "Containers",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Containers レイス",
+        "face": "(ง`0´)ง",
+        "maxHp": 100,
+        "statement": "FargateではタスクにCPUとメモリを設定できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Containersの知識",
+        "body": "Fargateタスクでは対応するCPUとメモリの組み合わせを指定する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html"
+      },
+      "sampleAnswer": "CPUとメモリを指定する",
+      "keywords": [
+        "CPU",
+        "メモリ"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-098",
+      "stage": 98,
+      "area": "コンテナの港",
+      "category": "Containers",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Containers ビースト",
+        "face": "(⊙﹏⊙)",
+        "maxHp": 100,
+        "statement": "ECSはALBと連携できない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Containersの知識",
+        "body": "ECSサービスはALBなどと連携してトラフィックを分散できる。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html"
+      },
+      "sampleAnswer": "ALBと連携できる",
+      "keywords": [
+        "ALB"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-099",
+      "stage": 99,
+      "area": "コンテナの港",
+      "category": "Containers",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Containers メイジ",
+        "face": "(•̀ᴗ•́)و",
+        "maxHp": 100,
+        "statement": "ECRのイメージスキャンは脆弱性確認に使えない！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Containersの知識",
+        "body": "ECRはコンテナイメージの脆弱性スキャン機能を提供する。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html"
+      },
+      "sampleAnswer": "イメージスキャンできる",
+      "keywords": [
+        "スキャン"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    },
+    {
+      "id": "AWS-100",
+      "stage": 100,
+      "area": "コンテナの港",
+      "category": "Containers",
+      "difficulty": "応用",
+      "enemy": {
+        "name": "Containers センチネル",
+        "face": "(￣へ￣)",
+        "maxHp": 100,
+        "statement": "ECSとEKSはどちらもデータベースサービスだ！"
+      },
+      "question": "敵の主張の誤りを説明してください。",
+      "adventureBook": {
+        "title": "Containersの知識",
+        "body": "ECSはコンテナ管理、EKSはKubernetes管理のサービス。",
+        "officialDocUrl": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html"
+      },
+      "sampleAnswer": "どちらもコンテナ関連",
+      "keywords": [
+        "コンテナ"
+      ],
+      "judgeNote": "キーワード一致だけで正解とせず、否定表現や文脈を検査する。AI判定導入まではサンプル回答を基準とした限定的判定を行う。"
+    }
+  ]
+}
