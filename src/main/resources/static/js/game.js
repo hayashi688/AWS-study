@@ -11,6 +11,7 @@ let state;
 let byId;
 let pending = false;
 let selectedService;
+let selectedCategory;
 const current = () => byId.get(state.order[state.currentIndex]);
 function saveProgress() {
   try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
@@ -22,28 +23,44 @@ function updateProgress() {
   text('progress-rate', `${Math.round(count / state.order.length * 1000) / 10}%`);
 }
 function bookPage(id) {
-  for (const page of ['book-index', 'book-sections', 'book-detail']) {
+  for (const page of ['book-index', 'book-services', 'book-sections', 'book-detail']) {
     document.getElementById(page).hidden = page !== id;
   }
 }
-function buildServiceList() {
-  const list = document.getElementById('service-list');
+function buildCategoryList() {
+  const list = document.getElementById('category-list');
   list.replaceChildren();
-  for (const service of dataset.serviceCatalog) {
+  for (const category of dataset.serviceCategories) {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'service-card';
-    button.dataset.service = service.serviceName;
-    const relevant = current().adventureBook.serviceName === service.serviceName;
-    button.textContent = service.serviceName + (relevant ? ' ★ 今回の問題' : '');
-    button.classList.toggle('current-service', relevant);
-    button.addEventListener('click', () => openService(service));
+    button.dataset.category = category.id;
+    button.textContent = category.label;
+    button.addEventListener('click', () => openCategory(category));
     list.append(button);
   }
 }
+function openCategory(category) {
+  selectedCategory = category;
+  text('category-title', category.label + ' — サービス一覧');
+  const list = document.getElementById('service-list');
+  list.replaceChildren();
+  for (const name of category.services) {
+    const service = dataset.serviceCatalog.find(item => item.serviceName === name);
+    if (!service) continue;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'service-card';
+    button.dataset.service = name;
+    button.textContent = name;
+    button.addEventListener('click', () => openService(service));
+    list.append(button);
+  }
+  bookPage('book-services');
+  document.getElementById('category-title').focus();
+}
 function showBookIndex(focus = false) {
   bookPage('book-index');
-  document.querySelector('#answer-help details').open = false;
   if (focus) document.getElementById('book-index-title').focus();
 }
 function openService(service) {
@@ -52,6 +69,8 @@ function openService(service) {
   const list = document.getElementById('section-list');
   list.replaceChildren();
   for (const section of dataset.navigationSections) {
+    const entries = service.sections.find(item => item.id === section.id)?.entries || [];
+    if (!entries.length) continue;
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'service-card';
@@ -85,15 +104,11 @@ function openSection(section) {
     link.href = entry.officialDocUrl; link.target = '_blank'; link.rel = 'noopener noreferrer';
     article.append(title, body, link); container.append(article);
   }
-  const q = current();
-  document.getElementById('answer-help').hidden = q.adventureBook.serviceName !== selectedService.serviceName;
-  text('prompt', q.question);
-  text('sample-answer', q.sampleAnswer);
-  document.querySelector('#answer-help details').open = false;
   bookPage('book-detail');
   document.getElementById('guide-title').focus();
 }
-document.getElementById('sections-back').addEventListener('click', () => showBookIndex(true));
+document.getElementById('services-back').addEventListener('click', () => showBookIndex(true));
+document.getElementById('sections-back').addEventListener('click', () => openCategory(selectedCategory));
 document.getElementById('book-back').addEventListener('click', () => openService(selectedService));
 function showStage() {
   updateProgress();
@@ -122,7 +137,10 @@ function showStage() {
   input.value = ''; input.disabled = cleared;
   attack.disabled = cleared; attack.textContent = cleared ? '討伐完了' : '⚔ 攻撃する';
   text('error', '');
-  buildServiceList(); showBookIndex();
+  text('prompt', q.question);
+  text('sample-answer', q.sampleAnswer);
+  document.querySelector('#answer-help details').open = false;
+  showBookIndex();
 }
 attack.disabled = true;
 fetch(form.dataset.questionsUrl).then(response => {
@@ -130,7 +148,7 @@ fetch(form.dataset.questionsUrl).then(response => {
   return response.json();
 }).then(payload => {
   dataset = payload.data; version = payload.datasetVersion;
-  if (!dataset.questions?.length || !Array.isArray(dataset.serviceCatalog) || !Array.isArray(dataset.navigationSections))
+  if (!dataset.questions?.length || !Array.isArray(dataset.serviceCatalog) || !Array.isArray(dataset.navigationSections) || !Array.isArray(dataset.serviceCategories))
     throw new Error('問題データが不正です。');
   if (dataset.quizSettings.order !== 'shuffle-without-replacement' || dataset.quizSettings.scope !== 'all'
       || dataset.quizSettings.questionsPerRun !== dataset.questions.length)
@@ -142,7 +160,7 @@ fetch(form.dataset.questionsUrl).then(response => {
   state = restoreProgress(saved, [...byId.keys()], version);
   if (saved && JSON.stringify(state) !== JSON.stringify(saved))
     text('storage-notice', '問題データの更新または保存内容の不整合に合わせて進捗を復旧しました。有効なクリア済みIDは保持しています。');
-  saveProgress(); showStage();
+  buildCategoryList(); saveProgress(); showStage();
 }).catch(failure => { error.textContent = failure.message; });
 form.addEventListener('submit', async event => {
   event.preventDefault();

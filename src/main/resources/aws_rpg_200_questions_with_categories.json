@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.2",
+  "schemaVersion": "2.1",
   "total": 200,
   "navigationSections": [
     {
@@ -7833,5 +7833,128 @@
     "sessionPersistence": "browser-local-storage",
     "replay": "reset-and-reshuffle",
     "grading": "existing-answer-judge-service"
+  },
+  "serviceCategories": [
+    {
+      "id": "storage",
+      "label": "ストレージ",
+      "services": [
+        "Amazon S3",
+        "Amazon EBS",
+        "Amazon EFS",
+        "AWS Backup"
+      ]
+    },
+    {
+      "id": "compute",
+      "label": "コンピューティング",
+      "services": [
+        "Amazon EC2",
+        "AWS Lambda",
+        "Amazon EC2 Auto Scaling"
+      ]
+    },
+    {
+      "id": "network",
+      "label": "ネットワーク・配信",
+      "services": [
+        "Amazon VPC",
+        "Security Group",
+        "Network ACL",
+        "VPC Peering",
+        "VPC Endpoint",
+        "NAT Gateway",
+        "Application Load Balancer",
+        "Network Load Balancer",
+        "Amazon Route 53",
+        "Amazon CloudFront",
+        "AWS Direct Connect",
+        "AWS Transit Gateway",
+        "Amazon API Gateway"
+      ]
+    },
+    {
+      "id": "database",
+      "label": "データベース・キャッシュ",
+      "services": [
+        "Amazon RDS",
+        "Amazon DynamoDB",
+        "Amazon Aurora",
+        "Amazon ElastiCache"
+      ]
+    },
+    {
+      "id": "security",
+      "label": "セキュリティ・ID管理",
+      "services": [
+        "AWS IAM",
+        "AWS Organizations",
+        "AWS Secrets Manager",
+        "AWS KMS",
+        "AWS WAF",
+        "AWS Shield"
+      ]
+    },
+    {
+      "id": "observability",
+      "label": "監視・監査",
+      "services": [
+        "Amazon CloudWatch",
+        "Amazon CloudWatch Logs",
+        "AWS CloudTrail",
+        "AWS X-Ray",
+        "AWS Config"
+      ]
+    },
+    {
+      "id": "integration",
+      "label": "アプリ連携・ワークフロー",
+      "services": [
+        "Amazon EventBridge",
+        "Amazon SNS",
+        "Amazon SQS",
+        "AWS Step Functions"
+      ]
+    },
+    {
+      "id": "containers",
+      "label": "コンテナ",
+      "services": [
+        "Amazon ECS",
+        "AWS Fargate",
+        "Amazon ECR",
+        "Amazon EKS"
+      ]
+    },
+    {
+      "id": "operations",
+      "label": "運用・構成管理",
+      "services": [
+        "AWS CloudFormation",
+        "AWS Systems Manager",
+        "AWS Well-Architected Framework",
+        "AWS Trusted Advisor"
+      ]
+    },
+    {
+      "id": "cost",
+      "label": "コスト管理",
+      "services": [
+        "AWS Cost Explorer",
+        "AWS Budgets"
+      ]
+    }
+  ],
+  "adventureBookUiSettings": {
+    "navigationHierarchy": [
+      "serviceCategories",
+      "serviceCatalog",
+      "navigationSections",
+      "entries"
+    ],
+    "showCurrentQuestionHighlight": false,
+    "showCurrentQuestionBadge": false,
+    "allowBrowsingAllServices": true,
+    "hideEmptySections": true
   }
 }

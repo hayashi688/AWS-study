@@ -14,9 +14,11 @@ public class QuestionCatalog {
     public record QuestionFile(String schemaVersion, int total, List<Question> questions,
         com.fasterxml.jackson.databind.JsonNode serviceCatalog,
         com.fasterxml.jackson.databind.JsonNode navigationSections,
-        com.fasterxml.jackson.databind.JsonNode quizSettings) {}
+        com.fasterxml.jackson.databind.JsonNode quizSettings,
+        com.fasterxml.jackson.databind.JsonNode serviceCategories,
+        com.fasterxml.jackson.databind.JsonNode adventureBookUiSettings) {}
     public QuestionCatalog(ObjectMapper mapper) throws IOException {
-        try (var input = new ClassPathResource("aws_rpg_200_questions_adventure_book.json").getInputStream()) {
+        try (var input = new ClassPathResource("aws_rpg_200_questions_with_categories.json").getInputStream()) {
             var bytes = input.readAllBytes();
             var file = mapper.readValue(bytes, QuestionFile.class);
             dataset = file;
@@ -54,6 +56,20 @@ public class QuestionCatalog {
                     }
                 }
             }
+            if (file.serviceCategories() == null || !file.serviceCategories().isArray())
+                throw new IllegalStateException("カテゴリ一覧が不正です");
+            var categoryIds = new HashSet<String>();
+            var categorized = new HashSet<String>();
+            for (var category : file.serviceCategories()) {
+                if (category.path("id").asText().isBlank() || !categoryIds.add(category.path("id").asText())
+                    || category.path("label").asText().isBlank() || !category.path("services").isArray())
+                    throw new IllegalStateException("カテゴリが不正です");
+                for (var name : category.path("services")) {
+                    if (!services.contains(name.asText())) throw new IllegalStateException("未登録サービス: " + name.asText());
+                    categorized.add(name.asText());
+                }
+            }
+            if (!categorized.equals(services)) throw new IllegalStateException("カテゴリ未所属のサービスがあります");
             for (var question : questions) {
                 if (!services.contains(question.adventureBook().serviceName()))
                     throw new IllegalStateException("問題に対応するサービスがありません: " + question.id());
