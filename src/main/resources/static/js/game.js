@@ -3,6 +3,12 @@ const form = document.getElementById('answer-form');
 const attack = document.getElementById('attack');
 const input = document.getElementById('answer');
 const next = document.getElementById('next-stage');
+const showQuestion = document.getElementById('show-question');
+showQuestion.addEventListener('click', () => {
+  if (!state || state.completed) return;
+  text('enemy-statement', current().enemy.statement);
+  showQuestion.hidden = true;
+});
 const error = document.getElementById('error');
 const text = (id, value) => { document.getElementById(id).textContent = value; };
 let dataset;
@@ -111,6 +117,7 @@ document.getElementById('services-back').addEventListener('click', () => showBoo
 document.getElementById('sections-back').addEventListener('click', () => openCategory(selectedCategory));
 document.getElementById('book-back').addEventListener('click', () => openService(selectedService));
 function showStage() {
+  showQuestion.hidden = true;
   updateProgress();
   document.querySelector('.columns').hidden = state.completed;
   document.querySelector('.answer-panel').hidden = state.completed;
@@ -179,6 +186,7 @@ form.addEventListener('submit', async event => {
       markCorrect(state); saveProgress(); showStage();
     } else {
       text('enemy-statement', data.message);
+      showQuestion.hidden = false;
       text('battle-result', 'MISS... 冒険者の書で調べて、もう一度答えよう。');
       document.getElementById('battle-result').className = 'miss';
     }
