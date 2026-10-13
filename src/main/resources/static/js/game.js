@@ -8,6 +8,49 @@ let pending = false;
 let questions = [];
 let index = 0;
 const text = (id, value) => { document.getElementById(id).textContent = value; };
+// 各分類の学習本文をまとめ、問題に関係なく同じ書籍を閲覧できるようにする。
+const serviceNames = {
+  S3: 'Amazon S3', EC2: 'Amazon EC2', VPC: 'Amazon VPC',
+  Network: 'ネットワーク・ELB', Lambda: 'AWS Lambda', Database: 'データベース・RDS',
+  IAM: 'AWS IAM・セキュリティ', Monitor: '監視・CloudWatch',
+  Scaling: 'Auto Scaling・運用', Containers: 'Amazon ECS・コンテナ'
+};
+function showBookIndex(focus = false) {
+  document.getElementById('book-index').hidden = false;
+  document.getElementById('book-detail').hidden = true;
+  document.querySelector('#answer-help details').open = false;
+  if (focus) document.getElementById('book-index-title').focus();
+}
+function openService(category) {
+  const entries = questions.filter(q => q.category === category);
+  const first = entries[0];
+  text('category', category);
+  text('guide-title', serviceNames[category] || first.adventureBook.title);
+  text('guide-body', [...new Set(entries.map(q => q.adventureBook.body))].join('\n\n'));
+  document.getElementById('official-doc').href = first.adventureBook.officialDocUrl;
+  const current = questions[index];
+  document.getElementById('answer-help').hidden = current.category !== category;
+  text('prompt', current.question);
+  text('sample-answer', current.sampleAnswer);
+  document.querySelector('#answer-help details').open = false;
+  document.getElementById('book-index').hidden = true;
+  document.getElementById('book-detail').hidden = false;
+  document.getElementById('guide-title').focus();
+}
+function buildServiceList() {
+  const list = document.getElementById('service-list');
+  list.replaceChildren();
+  for (const category of new Set(questions.map(q => q.category))) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'service-card';
+    button.dataset.category = category;
+    button.textContent = serviceNames[category] || category;
+    button.addEventListener('click', () => openService(category));
+    list.append(button);
+  }
+}
+document.getElementById('book-back').addEventListener('click', () => showBookIndex(true));
 function showStage() {
   const q = questions[index];
   cleared = false;
@@ -25,13 +68,7 @@ function showStage() {
   hp.max = q.enemy.maxHp;
   hp.value = q.enemy.maxHp;
   text('enemy-statement', q.enemy.statement);
-  text('category', q.category);
-  text('guide-title', q.adventureBook.title);
-  text('guide-body', q.adventureBook.body);
-  document.getElementById('official-doc').href = q.adventureBook.officialDocUrl;
-  text('prompt', q.question);
-  text('sample-answer', q.sampleAnswer);
-  document.querySelector('details').open = false;
+  showBookIndex();
   text('battle-result', '');
   text('error', '');
   document.getElementById('clear').hidden = true;
@@ -49,6 +86,7 @@ fetch(form.dataset.questionsUrl).then(response => {
 }).then(data => {
   if (!Array.isArray(data) || !data.length) throw new Error('問題データがありません。');
   questions = data;
+  buildServiceList();
   showStage();
 }).catch(failure => { error.textContent = failure.message; });
 form.addEventListener('submit', async event => {

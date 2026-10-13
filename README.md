@@ -84,3 +84,7 @@ Bedrock: `AnswerJudgeService` を実装するサービスを追加し、`Keyword
 
 STS: File → Import → Maven → Existing Maven Projectsから開き、AwsStudyApplication.javaを右クリック → Run As → Spring Boot App。
 VS Code: Extension Pack for JavaとSpring Boot Extension Packを入れ、プロジェクトフォルダを開いてAwsStudyApplicationのmain上のRunを押します。どちらもJava 21 JDKが必要です。
+
+## 冒険者の書
+
+各ステージ開始時と再スタート時はサービス一覧を表示します。サービスをクリックすると、JSONの同じcategoryに属する学習本文をまとめて閲覧できます。S3の戦闘中でもECSなど他サービスを調べられます。「サービス一覧へ」で戻ります。分類ごとに関連サービスをまとめています（例: ECS・Fargate・ECR・EKSはコンテナ分類）。現在の問題と同じ分類を開いた場合に、今回の回答例も表示します。閲覧するサービスを切り替えても戦闘の問題・HP・入力は変更しません。

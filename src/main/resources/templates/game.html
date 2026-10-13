@@ -12,7 +12,10 @@
 <div id="battle-result" role="status" aria-live="polite"></div>
 <div id="clear" hidden><strong>✨ CLEAR! ✨</strong><p id="clear-message"></p><button id="next-stage" type="button" disabled>次のステージへ</button></div>
 </section>
-<aside class="panel guide"><h2>📖 冒険者の書</h2><p id="category" class="eyebrow" th:text="${question.category}"></p><h3 id="guide-title" th:text="${question.adventureBook.title}"></h3><p id="guide-body" th:text="${question.adventureBook.body}"></p><a id="official-doc" th:href="${question.adventureBook.officialDocUrl}" target="_blank" rel="noopener noreferrer">AWS公式ドキュメントを開く ↗</a><p id="prompt" th:text="${question.question}"></p><details><summary>回答例・判定方法</summary><p>AI未使用のため、回答例と同じ内容・語順で答えてください。空白・句点・末尾の「だ／です」は許容します。言い換えなど判定できない回答は再回答となります。</p><p id="sample-answer" th:text="${question.sampleAnswer}"></p></details></aside>
+<aside class="panel guide"><h2>📖 冒険者の書</h2>
+<div id="book-index"><h3 id="book-index-title" tabindex="-1">サービス一覧</h3><p>調べたいサービスを選んで、知識を確認しよう。</p><div id="service-list" class="service-list" aria-label="AWSサービス一覧"><p>サービスを読み込み中…</p></div></div>
+<div id="book-detail" hidden><button id="book-back" type="button">← サービス一覧へ</button><p id="category" class="eyebrow"></p><h3 id="guide-title" tabindex="-1"></h3><p id="guide-body"></p><a id="official-doc" target="_blank" rel="noopener noreferrer">AWS公式ドキュメントを開く ↗</a><div id="answer-help" hidden><p id="prompt"></p><details><summary>今回の問題の回答例・判定方法</summary><p>AI未使用のため、回答例と同じ内容・語順で答えてください。空白・句点・末尾の「だ／です」は許容します。言い換えなど判定できない回答は再回答となります。</p><p id="sample-answer"></p></details></div></div>
+</aside>
 </div>
 <section class="panel answer-panel"><form id="answer-form" th:attr="data-question-id=${question.id},data-answer-url=@{/api/battle/answer},data-questions-url=@{/api/battle/questions}"><label for="answer">あなたの回答</label><textarea id="answer" name="answer" required maxlength="2000" rows="3" placeholder="敵の間違いを正そう。"></textarea><div class="actions"><span>学習資料は何度でも読めます</span><button id="attack" type="submit">⚔ 攻撃する</button></div><p id="error" role="alert"></p></form></section>
 <section id="game-clear" class="panel" hidden tabindex="-1"><h2>🏆 GAME CLEAR!</h2><p>全<span th:text="${total}"></span>問クリア！ AWSの冒険を完走しました。</p><button id="restart" type="button">最初から遊ぶ</button></section></main></body></html>
