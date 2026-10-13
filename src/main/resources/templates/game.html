@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>S3の湖 | AWS学習RPG</title><link rel="stylesheet" th:href="@{/css/game.css}"><script defer th:src="@{/js/game.js}"></script></head>
+<body><main>
+<header><p class="eyebrow">AWS QUEST · STAGE 01</p><h1>S3の湖</h1><p>冒険者の書を読み、敵の間違いを自分の言葉で正そう。</p></header>
+<div class="columns">
+<section class="panel battle" aria-labelledby="battle-title"><h2 id="battle-title">⚔ BATTLE</h2><h3 th:text="${enemy.enemyName}">S3スライム</h3>
+<div class="lake"><div class="slime" aria-label="S3スライム">(・ω・)</div><div class="ripple"></div></div>
+<div class="hp-label">HP <span id="hp-number" th:text="${enemy.currentHp}">100</span> / <span th:text="${enemy.maxHp}">100</span></div>
+<progress id="hp-bar" th:max="${enemy.maxHp}" th:value="${enemy.currentHp}" aria-label="敵のHP"></progress>
+<blockquote id="enemy-statement" th:text="${enemy.statement}"></blockquote>
+<div id="battle-result" role="status" aria-live="polite"></div>
+<div id="clear" hidden><strong>✨ CLEAR! ✨</strong><p>S3スライムを倒した！</p></div>
+</section>
+<aside class="panel guide"><h2>📖 冒険者の書</h2><p class="eyebrow">AMAZON S3 · 基礎知識</p><h3 th:text="${question.guideTitle}"></h3><p th:text="${question.guideText}"></p><div class="storage-diagram" aria-hidden="true">🪣 バケット<br><span>📄 オブジェクト　📷 オブジェクト</span></div><p class="hint">敵はストレージの種類を取り違えているようだ。どんなストレージなのか、伝えてみよう。</p></aside>
+</div>
+<section class="panel answer-panel"><form id="answer-form" th:attr="data-question-id=${question.questionId},data-answer-url=@{/api/battle/answer}"><label for="answer">あなたの回答</label><textarea id="answer" name="answer" required maxlength="2000" rows="3" placeholder="S3はどんなストレージ？ 自分の言葉で答えよう。"></textarea><div class="actions"><span>学習資料は何度でも読めます</span><button id="attack" type="submit">⚔ 攻撃する</button></div><p id="error" role="alert"></p></form></section>
+</main></body></html>
