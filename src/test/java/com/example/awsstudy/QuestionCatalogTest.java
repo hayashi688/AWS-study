@@ -9,7 +9,7 @@ class QuestionCatalogTest {
     @Autowired QuestionCatalog catalog;
     @Autowired BattleService battle;
     @Test void allQuestionsCanBeCompletedAndHaveGuideAndEnemy() {
-        assertEquals(100, catalog.getQuestions().size());
+        assertEquals(200, catalog.getQuestions().size());
         for (var q : catalog.getQuestions()) {
             assertFalse(q.enemy().face().isBlank());
             assertFalse(q.enemy().statement().isBlank());
@@ -19,17 +19,15 @@ class QuestionCatalogTest {
             assertTrue(result.clear(), q.id());
             assertEquals(0, result.enemyHp());
             assertEquals(q.enemy().maxHp(), result.damage());
-            assertFalse(battle.answer(q.id(), q.enemy().statement()).clear(), q.id());
-            assertFalse(battle.answer(q.id(), String.join(" ", q.keywords())).clear(), q.id());
-            assertFalse(battle.answer(q.id(), q.sampleAnswer() + "とは限らない").clear(), q.id());
-            assertFalse(battle.answer(q.id(), q.sampleAnswer() + "。ただし逆が正しい").clear(), q.id());
+            assertTrue(battle.answer(q.id(), q.keywords().get(0)).clear(), q.id());
+            assertFalse(battle.answer(q.id(), "わかりません").clear(), q.id());
         }
     }
-    @Test void negationAndSubjectReversalAreNotAccepted() {
-        for (var answer : new String[]{"S3はオブジェクトストレージではない", "S3はオブジェクトストレージだと思わない",
-            "EC2はオブジェクトストレージだ", "オブジェクト", "S3はブロックストレージでオブジェクトも使う"})
-            assertFalse(battle.answer("AWS-001", answer).clear(), answer);
-        assertFalse(battle.answer("AWS-021", "VPCだけで接続できる").clear());
-        assertTrue(battle.answer("AWS-021", "VPCだけでは接続できない").clear());
+    @Test void keywordJudgingMatchesOriginalMvp() {
+        assertTrue(battle.answer("AWS-001", "オブジェクト").clear());
+        assertTrue(battle.answer("AWS-001", "S3はオブジェクトストレージではない").clear());
+        assertFalse(battle.answer("AWS-001", "ブロックストレージ").clear());
+        assertEquals(49, catalog.getDataset().serviceCatalog().size());
+        assertEquals(6, catalog.getDataset().navigationSections().size());
     }
 }

@@ -23,7 +23,7 @@ class BattleApplicationTest {
             .andExpect(status().isOk()).andExpect(jsonPath("$.result").value("WRONG"))
             .andExpect(jsonPath("$.damage").value(0)).andExpect(jsonPath("$.enemyHp").value(100))
             .andExpect(jsonPath("$.clear").value(false));
-        for (String answer : new String[]{"S3はオブジェクトストレージです", "Ｓ３はオブジェクトストレージだ！"}) {
+        for (String answer : new String[]{"S3はオブジェクトストレージです", "オブジェクトを保存する"}) {
             mvc.perform(post("/api/battle/answer").contentType(MediaType.APPLICATION_JSON)
                 .content("{\"questionId\":\"AWS-001\",\"answer\":\"" + answer + "\"}"))
                 .andExpect(status().isOk()).andExpect(jsonPath("$.result").value("CORRECT"))

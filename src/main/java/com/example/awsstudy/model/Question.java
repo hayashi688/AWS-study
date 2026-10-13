@@ -4,5 +4,5 @@ public record Question(String id, int stage, String area, String category, Strin
                        EnemyData enemy, String question, AdventureBook adventureBook,
                        String sampleAnswer, List<String> keywords, String judgeNote) {
     public record EnemyData(String name, String face, int maxHp, String statement) {}
-    public record AdventureBook(String title, String body, String officialDocUrl) {}
+    public record AdventureBook(String title, String body, String officialDocUrl, String serviceName, String sectionId, String sectionLabel, String entryTitle) {}
 }

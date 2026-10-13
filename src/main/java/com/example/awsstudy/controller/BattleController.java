@@ -12,6 +12,10 @@ public class BattleController {
     private final BattleService battle;
     private final QuestionCatalog catalog;
     public BattleController(BattleService battle, QuestionCatalog catalog) { this.battle = battle; this.catalog = catalog; }
+    @GetMapping("/dataset")
+    public java.util.Map<String, Object> dataset() {
+        return java.util.Map.of("datasetVersion", catalog.getDatasetVersion(), "data", catalog.getDataset());
+    }
     @GetMapping("/questions")
     public List<Question> questions() { return catalog.getQuestions(); }
     @PostMapping("/answer")
